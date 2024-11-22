@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RPM_2.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:semi="clr-namespace:Semi.Avalonia;assembly=Semi.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RPM_2.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="RPM_2">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Боковая панель навигации -->
+        <StackPanel Grid.Column="0" Background="#2F2F2F" Spacing="20">
+            <Button Classes="SolidButton Tertiary" Margin="0 20 0 0" Content="Главная страница" Click="NavigateToHome" />
+            <Button Classes="Secondary" Content="Список сотрудников" Click="NavigateToEmployeeList" />
+            <Button Classes="SolidButton Success" Content="Добавить сотрудника" Click="NavigateToEmployeeAdd" />
+        </StackPanel>
+        
+        <!-- Область для контента -->
+        <ContentControl Background="#282828" Grid.Column="1" Name="MainFrame" />
+    </Grid>
+</Window>

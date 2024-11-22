@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:v="clr-namespace:RPM_2.Views"
+             xmlns:r="clr-namespace:RPM_2.Repositories"
+             x:Class="RPM_2.Views.EmployeeListPage"
+             x:DataType="r:Employees">
+    <Grid>
+        <ListBox x:Name="EmployeeList" Margin="10" SelectionMode="Single" ItemsSource="{Binding EmployeesCollection}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="16" />
+                        <TextBlock Text="{Binding Position}" FontSize="14" Foreground="Gray" />
+                        <Button Content="Редактировать" Click="EditEmployee" CommandParameter="{Binding}" HorizontalAlignment="Right" Margin="5"/>
+                        <Button Classes="Danger" Content="Удалить" Click="RemoveEmployee" CommandParameter="{Binding}" HorizontalAlignment="Right" Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

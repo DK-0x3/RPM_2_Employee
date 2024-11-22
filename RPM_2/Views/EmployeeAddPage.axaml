@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RPM_2.Views.EmployeeAddPage">
+    
+    <Grid RowDefinitions="50,*" Width="500">
+        <TextBlock HorizontalAlignment="Center" Text="Добавление сотрудника" FontSize="20" />
+        <StackPanel Grid.Row="1" Margin="10" Spacing="50" VerticalAlignment="Center">
+            <StackPanel>
+                <Label Classes="H6">ФИО Сотрудника</Label>
+                <TextBox x:Name="NameTextBoxAdd" Margin="0,10,0,0" />
+            </StackPanel>
+            <StackPanel>
+                <Label Classes="H6">Должность сотрудника</Label>
+                <TextBox x:Name="PositionTextBoxAdd" Margin="0,10,0,0" />
+            </StackPanel>
+            <Button Content="Добавить" Click="AddEmployee" Margin="0,10,0,0" />
+        </StackPanel>
+    </Grid>
+</UserControl>
